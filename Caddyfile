@@ -1,0 +1,12 @@
+:80 {
+    log
+    errors visible
+
+    fastcgi / 127.0.0.1:9000 php {
+        index server.php
+    }
+
+    rewrite {
+        to /server.php?{query}
+    }
+}
