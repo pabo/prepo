@@ -1,9 +1,10 @@
 # Prepo
 
-[![Current State](currentstate)]
-[![TODO](todo)]
+[Current State](#current-state)
 
-Prepo stops you from getting street sweeping parking tickets. It's built off the laravel framework.
+[TODO](#todo)
+
+Prepo stops you from getting street sweeping parking tickets. It's built off the laravel framework. In active development.
 
 ## Current State
 Gets your current location, plots it on a map, and tells you the street sweeping rules.
