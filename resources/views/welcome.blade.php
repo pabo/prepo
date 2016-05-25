@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Prepo</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{{ csrf_token() }}}">
@@ -13,16 +13,26 @@
         padding: 0;
       }
       #map {
-        height: 100%;
+        height: 80%;
       }
     </style>
   </head>
   <body>
+	<div>
+		<h3>Click anywhere in North Park to see the street sweeping schedule</h3>
+		<ul>TODO
+			<li>clicks not working on iphone through valet, but working locally.
+			<li>avenues and some other street types don't work yet. Streets and Drives definitely should.
+			<li>add button to show current location
+			<li>detect whether the current time is during the street sweeping window
+			<li>display all bad parking zones for a given time
+			<li>expand beyond north park
+		</ul>
+	</div>
     <div id="map"></div>
 
-    <script type="text/javascript" src="{{ asset('js/geo.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_BROWSER_API_KEY','')}}&callback=initMapWithLocation"
-	async defer></script>
+    <script type="text/javascript" src="js/geo.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_BROWSER_API_KEY','')}}&callback=initMap" async defer></script>
 
 		<br><br><br><hr>
 		<form action="{{ url('lookup') }}" method="POST" class="form-horizontal">
