@@ -49,3 +49,5 @@ Route::delete('/task/{task}', function (Task $task) {
 
 	return redirect('/task');
 });
+
+Route::post('/lookup', 'ReverseGeocodeController@lookup');

@@ -2,11 +2,19 @@
     log
     errors visible
 
-    fastcgi / 127.0.0.1:9000 php {
-        index server.php
-    }
+#    fastcgi / 127.0.0.1:9000 php {
+#        index server.php
+#    }
+	root ./public
+	fastcgi / 127.0.0.1:9000 php
 
-    rewrite {
-        to /server.php?{query}
-    }
+	rewrite {
+		r .*
+		ext /
+		to /index.php?{query}
+	}
+
+#    rewrite {
+#        to /server.php?{query}
+#    }
 }
