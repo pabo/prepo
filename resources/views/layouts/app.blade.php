@@ -4,9 +4,10 @@
 <html lang="en">
     <head>
         <title>Prepo</title>
-            <!-- Bootstrap CDN -->
-            <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <!-- Bootstrap CDN -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <meta name="csrf-token" content="{{{ csrf_token() }}}">
 
     </head>
 
