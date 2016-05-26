@@ -44,7 +44,7 @@ function clearMarkers() {
 }
 
 function initMap() {
-console.log('debug1');
+	console.log('debug1');
 	console.log('initmap');
 	map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 15,
@@ -53,12 +53,11 @@ console.log('debug1');
 
 	// center on North Park
 	map.setCenter(new google.maps.LatLng(32.75176633003113, -117.13442802429199));
-console.log('debug2');
+
+	//add click listener
 	google.maps.event.addListener(map, 'click', function(event) {
 
-console.log('debug3');
 		var latlng = event.latLng;
-		console.log(latlng.toString());
 
 		//clear all markers
 		clearMarkers();
@@ -77,26 +76,33 @@ console.log('debug3');
 			if (status === google.maps.GeocoderStatus.OK) {
 				if (results[0]) {
 					// we got a street address, so add a marker for it
-					console.log(results[0]);
 					var address = results[0].formatted_address;
 					var number = results[0].address_components[0].long_name;
 					var street = results[0].address_components[1].short_name;
+					console.log(street);
 
 					//add an info window
 					var infowindow = new google.maps.InfoWindow;
-					infowindow.setContent(address);
+					infowindow.setContent("<h3>Address</h3>" + address);
 					infowindow.open(map, marker);
 
 					lookupSchedule(number, street, function(text) {
-						console.log("I'm in your callback!");
-						infowindow.setContent("<h3>Address</h3>" + address + "<h3>Street Sweeping Schedule</h3>" + text.schedule);
+						var schedule;
+						if (text.status === 'success') {
+							schedule = text.schedule;
+						}
+						else {
+							schedule = 'No data';
+						}
+						console.log(text);
+						infowindow.setContent("<h3>Address</h3>" + address + "<h3>Street Sweeping Schedule</h3>" + schedule);
 					});
 				}
 			}
 		});
 	});
 
-console.log('debug4');
+	console.log('debug4');
 }
 
 /**
