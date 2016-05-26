@@ -21,8 +21,6 @@
 	<div>
 		<h3>Click anywhere in North Park to see the street sweeping schedule</h3>
 		<ul>TODO
-			<li>clicks not working on iphone through valet, but working locally.
-			<li>avenues and some other street types don't work yet. Streets and Drives definitely should.
 			<li>add button to show current location
 			<li>detect whether the current time is during the street sweeping window
 			<li>display all bad parking zones for a given time
