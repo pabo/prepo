@@ -1,8 +1,8 @@
 # Prepo
 
-[Installation](#installation)
-[Current State](#current-state)
-[TODO](#todo)
+- [Installation](#installation)
+- [Current State](#current-state)
+- [TODO](#todo)
 
 Prepo stops you from getting street sweeping parking tickets. It's built off the laravel framework. In active development.
 
